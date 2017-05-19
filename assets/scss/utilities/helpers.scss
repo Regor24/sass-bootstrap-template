@@ -1,0 +1,15 @@
+// Margin helpers
+@for $i from 0 through 6 {
+  .mb#{$i * 5} { margin-bottom: 5px * $i; }
+}
+@for $i from 0 through 6 {
+  .mt#{$i * 5} { margin-top: 5px * $i; }
+}
+
+// Padding helpers
+@for $i from 0 through 6 {
+  .pb#{$i * 5} { padding-bottom: 5px * $i; }
+}
+@for $i from 0 through 6 {
+  .pt#{$i * 5} { padding-top: 5px * $i; }
+}

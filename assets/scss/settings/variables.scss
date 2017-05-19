@@ -1,0 +1,63 @@
+// Colors internal
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Colors global
+$color-main: $color-black;
+
+$color-text-main: $color-black;
+
+$color-body: $color-white;
+
+// Links
+$color-link: $color-black;
+$color-link--hover: $color-black;
+$color-link--active: $color-black;
+$color-link--focus: $color-black;
+$color-link--visited: $color-black;
+
+// Buttons
+$color-btn-bg: $color-black;
+$color-btn-bg--hover: $color-black;
+$color-btn-bg--active: $color-black;
+$color-btn-bg--focus: $color-black;
+
+$color-btn-text: $color-white;
+$color-btn-text--hover: $color-white;
+$color-btn-text--active: $color-white;
+$color-btn-text--focus: $color-white;
+
+////////////////////////////////////////////////////////////////////////////////
+// Fonts/type
+$font-family-main: "Open Sans", "Arial", sans-serif;
+$font-family-main--bold: "Open Sans Bold", "Arial", sans-serif;
+$font-family-main--light: "Open Sans Light", "Arial", sans-serif;
+
+$font-size-main: 1rem !default; // Assumes the browser default, typically `16px`
+
+$font-size-h1: 20px;
+$font-size-h1--min: 20px;
+$font-size-h2: 20px;
+$font-size-h2--min: 20px;
+$font-size-h3: 20px;
+$font-size-h3--min: 20px;
+$font-size-h4: 20px;
+$font-size-h4--min: 20px;
+$font-size-h5: 20px;
+$font-size-h5--min: 20px;
+$font-size-h6: 20px;
+$font-size-h6--min: 20px;
+
+$font-weight-main: 500;
+$font-weight-bold: 700;
+$font-weight-light: 300;
+
+$line-height-main: 1.2;
+
+////////////////////////////////////////////////////////////////////////////////
+// Grid
+$brp-xs: map-get($grid-breakpoints, xs); // xs: 0,
+$brp-sm: map-get($grid-breakpoints, sm); // sm: 576px,
+$brp-md: map-get($grid-breakpoints, md); // md: 768px,
+$brp-lg: map-get($grid-breakpoints, lg); // lg: 992px,
+$brp-xl: map-get($grid-breakpoints, xl); // xl: 1200px

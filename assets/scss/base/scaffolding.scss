@@ -1,0 +1,62 @@
+html{
+  // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
+  -ms-overflow-style: scrollbar;
+  // Changes the default tap highlight to be completely transparent in iOS.
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body{
+  font-family: $font-family-main;
+  font-size: $font-size-main;
+  font-weight: $font-weight-main;
+  line-height: $line-height-main;
+  color: $color-text-main;
+  background-color: $color-body;
+}
+
+ol, ul{
+  margin: 0;
+  list-style: none;
+}
+
+// Links
+a{
+  color: $color-link;
+
+  &:visited{
+    color: $color-link--visited;
+  }
+
+  &:focus{
+    color: $color-link--focus;
+  }
+
+  &:hover{
+    color: $color-link--hover;
+  }
+
+  &:active{
+    color: $color-link--active;
+  }
+}
+
+// Buttons
+input[type="button"], button{
+  color: $color-btn-text;
+  background: $color-btn-bg;
+
+  &:focus{
+    color: $color-btn-text--focus;
+    background: $color-btn-bg--focus;
+  }
+
+  &:hover{
+    color: $color-btn-text--hover;
+    background: $color-btn-bg--hover;
+  }
+
+  &:active{
+    color: $color-btn-text--active;
+    background: $color-btn-bg--active;
+  }
+}

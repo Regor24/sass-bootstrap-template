@@ -1,0 +1,35 @@
+h1{
+  @include fluidFontSize($font-size-h1--min, $font-size-h1, $brp-sm, $brp-xl, 30px);
+}
+
+h2{
+  @include fluidFontSize($font-size-h2--min, $font-size-h2, $brp-sm, $brp-xl, 30px);
+}
+
+h3{
+  @include fluidFontSize($font-size-h3--min, $font-size-h3, $brp-sm, $brp-xl, 30px);
+}
+
+h4{
+  @include fluidFontSize($font-size-h4--min, $font-size-h4, $brp-sm, $brp-xl, 30px);
+}
+
+h5{
+  @include fluidFontSize($font-size-h5--min, $font-size-h5, $brp-sm, $brp-xl, 30px);
+}
+
+h6{
+  @include fluidFontSize($font-size-h6--min, $font-size-h6, $brp-sm, $brp-xl, 30px);
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+small{
+
+}
