@@ -1,0 +1,213 @@
+.table-one{
+  width: 100%;
+  padding: 20px 0px 0px 0px;
+
+  @media screen and (min-width: $brp-sm) {
+    padding: 20px 15px 20px 15px;
+  }
+
+  &__field{
+    flex-grow: 1;
+  }
+
+  &__header{
+    color: $color-subheader-lot;
+    font-size: 0.85em;
+    line-height: 1.5;
+    padding-right: 20px;
+    margin-bottom: 4px;
+    width: 100%;
+    flex-shrink: 0;
+    @media screen and (min-width: $brp-sm) {
+      margin-bottom: 0;
+      width: 40%;
+    }
+  }
+
+  &__content{
+    color: $color-text-lot;
+    font-size: 0.85em;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    width: 100%;
+
+    @media screen and (min-width: $brp-sm) {
+      margin-bottom: 0;
+      width: 60%;
+    }
+  }
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    padding: 10px 15px 10px 15px;
+
+    @media screen and (min-width: $brp-sm) {
+      flex-direction: row;
+    }
+
+    &.is-highlighted{
+      background-color: #ecf8fd;
+      .table-one{
+        &__header, &__content{
+          color: $color-header-lot;
+        }
+        &__content{
+          font-weight: $font-weight-bold;
+          font-family: $font-family-main--bold;
+        }
+      }
+    }
+  }
+
+  &--secondary{
+    .table-one{
+      &__header, &__content{
+        font-size: 1em;
+      }
+
+      &__row{
+        @media screen and (min-width: $brp-sm) {
+          align-items: center;
+        }
+      }
+
+      &__field{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        @media screen and (min-width: $brp-sm) {
+          width: 60%;
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    &__subrow{
+      width: 100%;
+    }
+
+  }
+}
+
+.table-two{
+  width: 100%;
+  padding: 20px 0px 0px 0px;
+
+  @media screen and (min-width: $brp-sm) {
+    padding: 20px 15px 0px 15px;
+  }
+
+  &__header{
+    color: $color-subheader-lot;
+    font-size: 0.85em;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    padding-right: 20px;
+    width: 100%;
+
+    @media screen and (min-width: $brp-sm) {
+      margin-bottom: 18px;
+      width: 40%;
+    }
+
+  }
+
+  &__content{
+    margin: 0;
+    margin-bottom: 18px;
+    color: $color-text-lot;
+    font-size: 0.85em;
+    line-height: 1.5;
+    width: 100%;
+
+    @media screen and (min-width: $brp-sm) {
+      width: 60%;
+    }
+  }
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $brp-sm) {
+      flex-direction: row;
+      padding: 10px 15px 0px 15px;
+    }
+
+    &:not(:last-child){
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+
+.table-three{
+
+  &__row{
+
+    display: flex;
+    padding: 15px 10px 0px 10px;
+
+    &--head{
+      background: $color-bg-head-table;
+      padding: 10px 10px 10px 10px;
+    }
+  }
+
+  &__col{
+
+    color: $color-text-table;
+
+    &:nth-child(1){
+      width: 40%;
+
+    }
+    &:nth-child(2){
+      width: 60%;
+    }
+
+    &--head{
+      color: $color-text-head-table;
+      font-size: 0.85em;
+      line-height: 1.5;
+    }
+  }
+
+  &--secondary{
+    .table-three{
+      &__row{
+
+      }
+      &__col{
+        &:first-child{
+          max-width: 70px;
+          display: none;
+          @media screen and (min-width: $brp-sm){
+            display: block;
+          }
+        }
+        &:nth-child(2){
+          width: 70%;
+          
+          @media screen and (min-width: $brp-sm){
+            width: 60%;
+          }
+        }
+        &:nth-child(3){
+          width: auto;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

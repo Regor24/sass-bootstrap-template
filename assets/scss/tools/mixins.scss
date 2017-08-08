@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////////
-// Fonts
+// Fonts size
 
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
@@ -35,5 +35,25 @@
   }
   @media (min-width: $w-max) {
     font-size: $f-max;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Link states
+
+// VFHA - rule
+@mixin link-state($color, $visited, $focus, $hover, $active) {
+  color: $color;
+  &:visited{
+    color: $visited;
+  }
+  &:focus{
+    color: $focus;
+  }
+  &:hover{
+    color: $hover;
+  }
+  &:active{
+    color: $active;
   }
 }

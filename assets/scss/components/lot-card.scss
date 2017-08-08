@@ -1,0 +1,427 @@
+.lot-card{
+
+  border: 1px solid $color-border;
+  background: #ffffff;
+  margin-bottom: 30px;
+
+  &__header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    border-bottom: 1px solid $color-border;
+
+    position: relative;
+
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      height:100%;
+      width: 30px;
+      z-index: $z-index-max;
+
+      @media screen and (min-width: $brp-md){
+        display: none;
+      }
+    }
+
+    &::before{
+      left: 0;
+      background-image: $gradient-fader-left--white;
+    }
+
+    &::after{
+      right:60px;
+      background-image: $gradient-fader-right--white;
+    }
+  }
+
+  &__body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 15px 15px 20px 15px;
+
+    @media screen and (min-width: $brp-md){
+      padding: 30px 30px 10px 30px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--secondary{
+      padding: 15px 15px 20px 15px;
+
+      @media screen and (min-width: $brp-md){
+        padding: 30px 30px 30px 30px;
+      }
+
+    }
+  }
+
+  &__footer{
+
+  }
+
+  &__footer-inner{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 15px 0 15px;
+
+    @media screen and (min-width: $brp-md){
+      flex-direction: row;
+      padding: 0 30px 10px 30px;
+    }
+  }
+
+  // Header
+  &__to-fav{
+    padding-left:15px;
+    padding-right:15px;
+
+    flex-shrink: 0;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-left: 1px solid $color-border;
+
+    @media screen and (min-width: $brp-md){
+      padding-left:25px;
+      padding-right:25px;
+      width: auto;
+    }
+    @media screen and (min-width: $brp-lg){
+      padding-left:45px;
+      padding-right:45px;
+    }
+  }
+
+  &__dates-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    flex-grow: 1;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+
+    @media screen and (min-width: $brp-lg){
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  &__date{
+    padding: 12px 10px 9px 0;
+    margin: 0 10px 0 10px;
+    color: $color-subheader-lot;
+    border-bottom: 3px solid transparent;
+    flex-shrink: 0;
+
+    @media screen and (min-width: $brp-lg){
+      margin: 0 15px 0 15px;
+    }
+
+    &.is-active{
+      font-weight: $font-weight-bold;
+      font-family: $font-family-main--bold;
+      &--first{
+        color: $color-state-ok;
+        border-color: $color-state-ok;
+      }
+      &--second{
+        color: $color-state-warning;
+        border-color: $color-state-warning;
+      }
+      &--third{
+        color: $color-state-info;
+        border-color: $color-state-info;
+      }
+      &--fourth{
+        color: $color-state-danger;
+        border-color: $color-state-danger;
+      }
+    }
+  }
+
+  &__date-text{
+
+    color: inherit;
+    font-size: 0.85em;
+    line-height: 1.5;
+
+    & > span{
+      display: block;
+    }
+  }
+
+  // Body
+  &__body-column{
+    &:first-child{
+      flex-grow: 1;
+    }
+
+    &:nth-child(2){
+      flex-shrink: 0;
+      @media screen and (min-width: $brp-md){
+        max-width: 50%;
+      }
+    }
+  }
+
+  &__name{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.33;
+    color: $color-header-lot;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main--bold;
+
+    @include link-state($color-header-lot,
+            $color-header-lot,
+            $color-header-lot,
+            $color-main,
+            $color-header-lot);
+
+    @media screen and (min-width: $brp-md){
+      padding-right: 120px;
+      font-size: 1.3em;
+    }
+  }
+
+  &__definition{
+    margin: 0;
+    font-size: 0.85em;
+    line-height: 1.5;
+
+    @media screen and (max-width: $brp-md--max){
+      text-align: initial !important;
+    }
+
+    & > dt{
+      display: inline-block;
+      margin: 0;
+      color: $color-subheader-lot;
+    }
+
+    & > dd{
+      display: inline-block;
+      margin: 0;
+      color: $color-text-lot;
+    }
+  }
+
+  &__price{
+    margin-bottom: 10px;
+    font-size: 1.7em;
+    line-height: 1;
+    color: $color-header-lot;
+
+    @media screen and (min-width: $brp-md){
+      text-align: right;
+      font-size: 2.14em;
+    }
+  }
+
+  // Footer
+  &__table{
+
+    overflow: hidden;
+    transition: max-height 0.3s;
+    padding: 0 15px 0 15px;
+
+    @media screen and (min-width: $brp-md) {
+      padding: 0 30px 0 30px;
+    }
+
+    &.is-bordered{
+      border-top: 1px solid $color-border;
+    }
+
+    .lot-card__desktop-table{
+
+      table{
+        width: 100%;
+        border-collapse: collapse;
+
+        @media screen and (max-width: $brp-md--max) {
+          display: none;
+        }
+
+        thead{
+          th{
+            color: $color-subheader-lot;
+            font-size: 0.85em;
+            line-height: 1;
+            font-weight: $font-weight-reg;
+            font-family: $font-family-main;
+            text-align: start;
+            text-align: left;
+
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-border;
+          }
+        }
+
+        tbody{
+          td{
+            color: $color-text-lot;
+            text-align: start;
+            text-align: left;
+
+            &:nth-child(2){
+              font-size: 0.85em;
+            }
+          }
+
+          tr{
+            th, td{
+              padding-bottom: 10px;
+              padding-top: 10px;
+            }
+            &:last-child{
+              td{
+                padding-bottom: 30px;
+              }
+            }
+            &:not(:last-child){
+              th, td {
+                border-bottom: 1px solid $color-border;
+              }
+            }
+          }
+        }
+
+        th, td{
+          padding-right: 10px;
+          vertical-align: baseline;
+          border-left: none;
+          border-right: none;
+
+          &:nth-child(n+3){
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    .lot-card__mobile-table {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        @media screen and (min-width: $brp-md) {
+          display: none;
+        }
+
+        tr{
+          th{
+            font-size: 0.85em;
+            line-height: 1.5;
+            font-weight: $font-weight-reg;
+            font-family: $font-family-main;
+            text-align: start;
+            text-align: left;
+
+            padding-right: 5px;
+            color: $color-subheader-lot;
+          }
+
+          td{
+            padding-bottom: 10px;
+            line-height: 1.1;
+            color: $color-text-lot;
+          }
+
+          th, td{
+            vertical-align: baseline;
+          }
+
+          &:first-child{
+            th, td{
+              padding-top: 20px;
+            }
+          }
+
+          &:nth-child(2){
+            td{
+              font-size: 0.85em;
+            }
+          }
+
+          &:last-child{
+            td, th{
+              padding-bottom: 20px;
+            }
+          }
+        }
+
+        &:not(:last-child){
+          tr:last-child{
+            td, th{
+              border-bottom: 1px solid $color-border;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Подкомпоненты
+  .add-to-fav{
+    &__text{
+      display: none;
+      @media screen and (min-width: $brp-md){
+        display: block;
+      }
+    }
+    &__icon{
+      margin-left: 0;
+      @media screen and (min-width: $brp-md){
+        margin-left:5px;
+      }
+    }
+  }
+
+  &--inner{
+    margin-bottom: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+    .lot-card{
+      &__subheader{
+        @media screen and (min-width: $brp-md){
+          text-align: right;
+        }
+      }
+      &__name{
+        @include link-state($color-header-lot,
+                $color-header-lot,
+                $color-header-lot,
+                $color-header-lot,
+                $color-header-lot);
+      }
+    }
+  }
+}

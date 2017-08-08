@@ -1,0 +1,72 @@
+.tag{
+  display: inline-block;
+  padding: 7px 30px 7px 7px;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+
+  transition: border 0.3s;
+  position: relative;
+
+  &__text{
+    color: $color-tag-text;
+    font-weight: $font-weight-main;
+    font-family: $font-family-main;
+  }
+
+  &__close{
+    color: $color-close-cross;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 0px;
+    cursor: pointer;
+
+    &::before, &::after{
+      position: absolute;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    &:before{
+      transform: rotate(45deg);
+      top: 10px;
+      left: 3px;
+    }
+
+    &::after{
+      transform: rotate(-45deg);
+      top: 10px;
+      left: 3px;
+    }
+  }
+
+  &:hover{
+    border-color: $color-gray-4;
+    .tag__close{
+      color: $color-main;
+    }
+  }
+
+  &--secondary{
+    .tag{
+      &__close{
+        top: 2px;
+        margin-top: 0;
+      }
+      &__text{
+        font-size: 0.8em;
+      }
+    }
+  }
+}

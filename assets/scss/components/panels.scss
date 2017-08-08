@@ -1,0 +1,46 @@
+.panel-accent{
+  background: $color-main;
+}
+
+.panel-form{
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.panel-inner{
+  background: #ffffff;
+
+  padding: 15px;
+
+  @media screen and (min-width: $brp-sm) {
+    padding: 30px;
+  }
+}
+
+.panel-bordered{
+  border: 1px solid $color-border;
+  border-radius: 4px;
+
+  padding: 15px;
+
+  @media screen and (min-width: $brp-sm) {
+    padding: 30px;
+  }
+}
+
+.panel-bg{
+  background-color: #f5f7f7;
+  border-radius: 4px;
+
+  padding: 15px;
+
+  @media screen and (min-width: $brp-sm) {
+    padding: 30px;
+  }
+
+  &--bordered{
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    padding-bottom: 0;
+  }
+}

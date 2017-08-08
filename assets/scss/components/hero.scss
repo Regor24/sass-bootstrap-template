@@ -1,0 +1,60 @@
+.hero{
+  color: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 10px;
+
+  &--special-paddings{
+    padding-bottom: 10px;
+    @media screen and (min-width: $brp-md){
+      padding-bottom: 30px;
+    }
+  }
+
+  &__header{
+
+    font-size: 2em;
+    line-height: 1.4;
+    color: inherit;
+    font-weight: $font-weight-thin;
+
+    @media screen and (min-width: $brp-sm){
+      font-size: 2.5em;
+    }
+
+    &--bold{
+      font-size: 1.71em;
+      line-height: 1.333;
+      font-weight: $font-weight-bold;
+      font-family: $font-family-main--bold;
+    }
+  }
+
+  &__text{
+    color: inherit;
+    font-size: 0.85em;
+    line-height: 1.5;
+    text-align: initial;
+
+    &--right-to-left{
+      @media screen and (min-width: $brp-sm){
+        text-align: right;
+      }
+    }
+  }
+
+  &__price{
+
+    font-size: 2.14em;
+    line-height: 1;
+    color: inherit;
+    font-weight: $font-weight-main;
+    font-family: $font-family-main;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $brp-sm){
+      margin-top: 0;
+    }
+  }
+}

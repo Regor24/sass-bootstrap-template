@@ -1,3 +1,103 @@
 .main-footer{
-  
+
+  font-size: 1em;
+
+  --mainFooterHeight: 0px;
+  height: var(--mainFooterHeight);
+
+  @supports (height: var(--mainFooterHeight)){
+    height: auto;
+    height: var(--mainFooterHeight);
+  }
+
+  &::before{
+    content: "";
+    position: fixed;
+    bottom: 0;
+    background: $color-bg-main-footer;
+    height: var(--mainFooterHeight);
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__content{
+    background: $color-bg-main-footer;
+    transition: opacity 0.4s;
+    transition-timing-function: ease-in;
+    @supports (height: var(--mainFooterHeight)){
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: $z-index-min;
+    }
+  }
+
+  &__top{
+    padding: 30px 0px 10px 0px;
+    border-bottom: 1px solid $color-border-main-footer;
+    color: $color-text-footer;
+    font-weight: $font-weight-light;
+
+    @media screen and (min-width: $brp-md) {
+      padding: 60px 0px 40px 0px;
+    }
+  }
+
+  &__bottom{
+    font-size: 0.85em;
+    font-family: $font-family-main--light;
+    font-weight: $font-weight-light;
+  }
+
+  &__bottom-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media screen and (min-width: $brp-md) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+
+  &__link{
+    display: block;
+
+    font-weight: $font-weight-reg;
+    font-family: $font-family-main;
+    line-height: 1.3;
+    text-decoration: none;
+
+    @include link-state($color-text-footer,
+                        $color-text-footer,
+                        $color-text-footer,
+                        $color-text-footer,
+                        $color-text-footer);
+  }
+
+  &__text{
+    color: $color-text-footer;
+    font-weight: $font-weight-reg;
+    font-family: $font-family-main;
+    line-height: 1.3;
+  }
+
+  &__logo{
+    width: 100%;
+    height: auto;
+
+    max-width: 110px;
+    max-height: 70px;
+  }
+
+  &__header{
+    margin-bottom: 14px;
+
+    color: $color-header-footer;
+    font-size: inherit;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main--bold;
+    line-height: 1;
+  }
 }

@@ -1,0 +1,36 @@
+.form-rows{
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-direction: column;
+
+    @media screen and (min-width: $brp-md){
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__label{
+    flex-shrink: 0;
+    font-size: 1.28em;
+    line-height: 1;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+    color: $color-input-text;
+    margin-bottom: 10px;
+    padding-right: 15px;
+
+    @media screen and (min-width: $brp-md){
+      margin-bottom:0;
+    }
+  }
+  &__field{
+    flex-grow: 0;
+    width: 100%;
+
+    @media screen and (min-width: $brp-md){
+      width: 60%;
+    }
+  }
+}

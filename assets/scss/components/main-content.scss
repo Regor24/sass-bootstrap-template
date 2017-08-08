@@ -1,0 +1,7 @@
+.main-content{
+  background-color: $color-body;
+  @supports (height: var(--mainFooterHeight)){
+    position: relative;
+    z-index: $z-index-max; 
+  }
+}

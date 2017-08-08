@@ -1,0 +1,144 @@
+.main-nav{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: $color-bg-main-nav;
+
+  @supports (height: var(--mainFooterHeight)){
+    position: relative;
+    z-index: $z-index-max;
+  }
+
+  @media screen and (max-width: $brp-mobile-menu--max){
+    z-index: $z-index-menu;
+  }
+
+  &__list{
+    font-size: 1.15em;
+    line-height: 0;
+    font-weight: $font-weight-bold;
+
+    @media screen and (max-width: $brp-mobile-menu--max){
+      width: 100%;
+      padding: 75px 0px 105px 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item{
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+
+    &:last-child{
+      margin-right: 30px;
+    }
+  }
+
+  &__link{
+    padding: 37px 30px 37px 30px;
+    position: relative;
+
+    text-decoration: none;
+    line-height: 1;
+    font-size: 1em;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+
+    @include link-state($color-link-nav,
+                        $color-link-nav--visited,
+                        $color-link-nav--focus,
+                        $color-link-nav--hover,
+                        $color-link-nav--active);
+
+    @media screen and (max-width: $brp-mobile-menu--max){
+      padding: 15px 0px 15px 0px;
+      width: 100%;
+    }
+
+    &::before{
+      content: '';
+      background-color: $color-main;
+      position: absolute;
+      transition: all 0.3s;
+
+      @media screen and (min-width: $brp-mobile-menu){
+        width: 100%;
+        height: 8px;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &:hover{
+      .main-nav__link-text{
+        @media screen and (min-width: $brp-mobile-menu){
+          transform: translateY(-4px);
+        }
+      }
+      &::before{
+        background-color: $color-main;
+        bottom: 0;
+      }
+    }
+
+    &--is-active{
+      pointer-events: none;
+      &:hover{
+        color: $color-link-nav;
+        .main-nav__link-text{
+          transform: translateY(0px);
+        }
+      }
+      &::before{
+        background-color: $color-main;
+        width: 10px;
+        height: 100%;
+        right: 0;
+        top: 0;
+
+        @media screen and (min-width: $brp-mobile-menu){
+          height: 15px;
+          bottom: 0px;
+          width: 100%;
+          right: auto;
+          top: auto;
+        }
+      }
+    }
+  }
+
+  &__link-text{
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+
+  &__logo{
+    position: relative;
+    margin-left: 30px;
+    top: -20px;
+    line-height: 0;
+
+    @media screen and (max-width: $brp-mobile-menu--max){
+      display: none;
+    }
+  }
+
+  &__logo-image{
+    width: 100%;
+    height: auto;
+    max-width: 110px;
+    max-height: 70px;
+  }
+}

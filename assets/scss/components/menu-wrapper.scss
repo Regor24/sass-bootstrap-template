@@ -1,0 +1,60 @@
+.menu-wrapper{
+
+  position: relative;
+
+  @media screen and (max-width: $brp-lg--max){
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: $z-index-menu;
+
+    background-color: $color-bg-nav-wrapper;
+
+    display: flex;
+    width: 240px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    transform: translateX(240px);
+    transition: transform 0.3s;
+    transition-timing-function: ease-in;
+  }
+
+  &::before{
+    @media screen and (max-width: $brp-lg--max){
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: $z-index-menu-overlay;
+      background-color: #6f7273;
+      opacity: 0;
+      width: 100vw;
+      transform: translateX(-240px);
+      display: none;
+    }
+  }
+
+  &.is-mobile-menu-open{
+    transform: translateX(0);
+
+    &::before{
+      display: block;
+      animation-name: menuOverlay;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+@keyframes menuOverlay {
+  from{
+    opacity: 0
+  }
+  to{
+    opacity: 0.5;
+  }
+}

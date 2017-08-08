@@ -1,0 +1,307 @@
+.select-field{
+
+  &__inner{
+    font-size: 1em;
+    line-height: 1;
+
+    &--modal {
+      width: 100%;
+
+      @media screen and (min-width: $brp-sm){
+        width: 470px;
+      }
+    }
+  }
+
+  &__control{
+    border-radius: 20px;
+    border: 1px solid $color-input-content-thirdly;
+    background-color: $color-input-bg;
+    color: $color-input-text;
+    padding: 0px 40px 0px 20px;
+    height: 40px;
+
+    transition: color 0.3s, background 0.3s, border-color 0.3s;
+
+    &:hover{
+      border-color: $color-input--event;
+      color: $color-input--event !important;
+      background-color: $color-input-bg--thirdly;
+      .select-field__check{
+        border-color: $color-input--event !important;
+      }
+      .checkbox-multicheck__label{
+        color: $color-input--event !important;
+      }
+    }
+
+    &--modal {
+      width: 100%;
+
+      @media screen and (min-width: $brp-sm){
+        width: 470px;
+      }
+    }
+  }
+
+  &__check{
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+
+    position: relative;
+    left: 0;
+
+    width: 16px;
+    height: 16px;
+
+    margin-right: 9px;
+
+    border: 1px solid;
+    border-radius: 2px;
+
+    transition: background 0.2s, border 0.2s;
+    transition-timing-function: ease-out;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    outline: none;
+
+    &::after{
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -5px;
+      margin-left: -5px;
+
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+
+      margin-right: 9px;
+      border-radius: 2px;
+
+      background-color: $color-input--event;
+
+      transition: opacity 0.2s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  &__item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    &--modal {
+      color: $color-gray-15;
+      font-weight: normal;
+    }
+  }
+
+  &__item-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__item-text, &__number-selected {
+    pointer-events: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__list{
+    padding: 6px 0 6px 0;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid $color-input--event;
+    background: $color-input-bg--secondary;
+    z-index: $z-index-max;
+
+    &--modal {
+      width: 100%;
+
+      @media screen and (min-width: $brp-sm){
+        width: 470px;
+      }
+    }
+  }
+
+  &__option{
+    font-size: 1em;
+    line-height: 1.2;
+    transition: all 0.3s;
+    padding: 6px 20px 6px 20px;
+
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+    position: relative;
+
+    &:hover{
+      color: $color-input--event;
+    }
+  }
+
+  &__toggler{
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  &.is-narrow{
+    .select-field{
+      &__control{
+        height: 32px;
+      }
+
+      &__option{
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      &__list{
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+  }
+
+  &.is-multi{
+    .select-field{
+      &__control{
+        color: $color-input-content;
+      }
+
+      &__check{
+        border-color: $color-input-content;
+      }
+
+      &__item{
+        &::before{
+          display: block;
+        }
+      }
+
+      &__option{
+        padding-left: 20px;
+
+        &::before{
+          display: block;
+        }
+      }
+
+      &__list{
+        color: $color-input-content;
+      }
+    }
+  }
+
+  &.in-modal{
+    & > .select-field__inner:not(.is-opened){
+      .checkbox-multicheck{
+        &__label{
+          color: $color-input-content--modal;
+        }
+        &__check{
+          border-color: $color-input-content--modal;
+          &.is-checked-part{
+            border-color: $color-input-bg--secondary;
+          }
+        }
+      }
+
+      .select-field__control{
+        background-color: $color-input-content;
+        color: $color-input-bg--secondary;
+        border-color: $color-input-content;
+
+        &:hover{
+          color: $color-input--event;
+          .checkbox-multicheck{
+            &__check{
+              border-color: $color-input--event;
+            }
+          }
+        }
+      }
+    }
+
+    .select-field__check{
+      border-color: $color-input-content--secondary;
+    }
+  }
+
+  & > .is-opened{
+    color: $color-input-text;
+    transition: color 0.3s, background 0.3s;
+
+    .select-field__check{
+      border-color: $color-input--event;
+    }
+
+    .list-is-opened{
+      border-top: 0;
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    .select-field__control{
+      background: $color-input-bg--secondary;
+      border-color: $color-input--event;
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+
+      color: $color-input--event;
+
+      position: relative;
+
+      &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        background-color: $color-input-content-thirdly;
+        height: 1px;
+      }
+    }
+  }
+
+  &.is-disabled{
+    pointer-events: none;
+
+    .select-field{
+      &__control{
+        color: $color-input-content-thirdly;
+        border-color: $color-input-content-thirdly;
+        background-color: $color-input-bg--thirdly;
+      }
+
+      &__list{
+        color: $color-input-content-thirdly;
+        border-color: $color-input-content-thirdly;
+        background-color: $color-input-bg--thirdly;
+      }
+    }
+
+    .dd__expandIcon{
+      opacity: 0.1;
+    }
+  }
+}

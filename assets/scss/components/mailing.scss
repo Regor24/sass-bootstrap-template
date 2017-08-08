@@ -1,0 +1,60 @@
+.mailing{
+  &__time{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $brp-md){
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__time-col{
+    width: 100%;
+
+    @media screen and (min-width: $brp-sm){
+      width: 50%;
+    }
+    @media screen and (min-width: $brp-md){
+      width: 25%;
+    }
+
+    &--wide{
+      width: 100%;
+
+      @media screen and (min-width: $brp-md){
+        width: 50%;
+      }
+    }
+  }
+
+  &__hours{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 50%;
+      flex-grow: 0;
+
+      @media screen and (min-width: $brp-sm){
+        width: 33%;
+      }
+    }
+  }
+
+  &__controls{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+
+    @media screen and (min-width: $brp-sm){
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

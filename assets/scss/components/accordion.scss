@@ -1,0 +1,86 @@
+.markets-table {
+  border: 1px solid $color-gray-8;
+  background: $color-white;
+}
+
+.markets-table__header {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  @media screen and (min-width: $brp-lg) {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+.markets-table__body {
+  padding: 20px 30px;
+}
+
+.markets-btn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.accordion__header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 15px 20px 15px 10px;
+  cursor: default;
+  border: none;
+  background: $color-gray-10;
+
+  &--right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 10px 0 0 30px;
+
+    @media screen and (min-width: $brp-md) {
+      padding-left: 30px;
+    }
+  }
+
+  @media screen and (min-width: $brp-md) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.accordion__body {
+  border: none;
+}
+
+.accordion__item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-top: 5px;
+  padding: 10px 20px 10px 10px;
+  background: $color-gray-10;
+}
+
+.accordion__group-name {
+  color: $color-gray-14;
+}
+
+.accordion__item-name {
+  color: $color-gray-15;
+}
+
+.accordion__element {
+  margin-bottom: 15px !important;
+}
+
+.accordion__text-help {
+  color: $color-gray-15;
+}

@@ -1,0 +1,46 @@
+.rules{
+
+  padding: 60px 0px 90px 0px;
+
+  h1{
+    font-size: 1.71em;
+    line-height: 1;
+    color: $color-header-lot;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+
+    margin-bottom: 30px;
+
+    @media screen and (min-width: $brp-sm) {
+      font-size: 2.57em;
+    }
+  }
+
+  h2{
+    font-size: 1.5em;
+    line-height: 1;
+    color: $color-header-lot;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+
+    margin: 20px auto;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .right{
+    float: right;
+  }
+
+  p{
+    text-indent: 1.5em;
+    text-align: justify;
+    line-height: 1.6em;
+  }
+
+  .sidebar__list{
+    a{
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.template{
+  margin-bottom: 30px;
+  border: 1px solid $color-border;
+  background: #ffffff;
+  padding: 30px 15px 0px 15px;
+
+  @media screen and (min-width: $brp-xs){
+    padding: 30px 30px 0px 30px;
+  }
+
+  &__header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media screen and (min-width: $brp-sm){
+      flex-direction: row;
+    }
+  }
+
+  &__body{
+
+  }
+
+  &__footer{
+    padding: 30px 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    @media screen and (min-width: $brp-sm){
+      align-items: center;
+    }
+    @media screen and (min-width: $brp-md){
+      flex-direction: row;
+    }
+  }
+
+  &__settings{
+  }
+
+  /////--------------------------------------------
+
+  &__heading{
+    margin-bottom: 20px;
+    font-size: 1.28em;
+    line-height: 1.333333;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main--bold;
+    color: $color-header;
+
+    @media screen and (min-width: $brp-sm){
+      margin-bottom: 0;
+    }
+  }
+
+  &__controls{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media screen and (min-width: $brp-sm){
+      flex-direction: row;
+    }
+
+    &--hoverable{
+      opacity: 1;
+      transition: opacity 0.3s;
+
+      @media screen and (min-width: $brp-lg) {
+        opacity: 0;
+      }
+    }
+  }
+
+  &:hover{
+    .template__controls--hoverable{
+      opacity: 1;
+    }
+  }
+
+  .is-visible{
+    opacity: 1;
+  }
+}

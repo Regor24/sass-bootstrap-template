@@ -1,0 +1,145 @@
+.row-by-three{
+  & > *{
+    margin-left: 5px;
+    margin-right: 5px;
+    flex-basis: calc(33% - 15px);
+    flex-grow: 1;
+  }
+}
+
+.flex-start{
+  justify-content: flex-start;
+}
+
+.vertical-start{
+  align-items: flex-start;
+}
+
+.nowrap{
+  flex-wrap: nowrap;
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
+
+.align-center{
+  display: flex;
+  align-items: center;
+}
+
+.flex{
+  display: flex !important;
+}
+
+
+// Flex alignment
+.align-center{
+  align-items: center;
+}
+
+.align-end{
+  align-items: flex-end;
+
+  &-md{
+    align-items: flex-start;
+    @media screen and (min-width: $brp-md){
+      align-items: flex-end;
+    }
+  }
+  &-sm{
+    align-items: flex-start;
+    @media screen and (min-width: $brp-sm){
+      align-items: flex-end;
+    }
+  }
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+// Special layout
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  &--3-col{
+    & > *{
+      width: 100%;
+      @media screen and (min-width: $brp-sm){
+        width: calc(50% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      @media screen and (min-width: $brp-lg){
+        width: calc(33% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+.flex-row-secondary{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media screen and (min-width: $brp-lg){
+    flex-direction: row;
+    align-items: center;
+  }
+
+  & > *{
+    flex-shrink: 0;
+
+    &:nth-child(1){
+      flex-shrink: 1;
+      flex-grow: 1;
+      width: calc(100% - 30px);
+      @media screen and (min-width: $brp-lg){
+        width: auto;
+      }
+    }
+  }
+
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media screen and (min-width: $brp-sm){
+      flex-direction: row;
+      align-items: center;
+    }
+
+    & > *{
+      flex-shrink: 0;
+
+      &:last-child{
+        @media screen and (min-width: $brp-lg){
+          margin-left: 45px !important;
+        }
+      }
+    }
+  }
+}

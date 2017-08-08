@@ -1,0 +1,85 @@
+.search-result{
+  background: $color-bg-search-result;
+  padding: 30px 0px 30px 0px;
+
+  @media screen and (min-width: $brp-md){
+    padding: 60px 0px 30px 0px;
+  }
+
+  &__header{
+    margin-bottom: 30px;
+
+    font-family: $font-family-main--thin;
+    font-weight: $font-weight-thin;
+    color: $color-text-main;
+    text-align: center;
+  }
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    font-family: $font-family-main;
+
+    @media screen and (min-width: $brp-md){
+      flex-direction: row;
+    }
+  }
+
+  &__row-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    @media screen and (min-width: $brp-md){
+      flex-direction: row;
+      width: auto;
+    }
+  }
+
+  &__find{
+    margin-bottom: 30px;
+    font-weight: $font-weight-light;
+    color: $color-input-text;
+    font-size: 1.3em;
+    line-height: 1;
+
+    @media screen and (min-width: $brp-md){
+      margin-bottom: 0px;
+    }
+  }
+
+  &__sort-label{
+    margin-bottom: 10px;
+    color: $color-input-content;
+    margin-right: 10px;
+
+    @media screen and (min-width: $brp-md){
+      margin-bottom: 0px;
+    }
+  }
+
+  &__number{
+    font-weight: $font-weight-bold;
+    color: $color-input-text;
+
+  }
+
+  &__date-sort{
+    width: 100%;
+    @media screen and (min-width: $brp-sm){
+      max-width: 310px;
+      width: 310px;
+    }
+
+    &--little{
+      max-width: 100px;
+      width: 100px;
+    }
+  }
+}

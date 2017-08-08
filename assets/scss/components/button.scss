@@ -1,10 +1,361 @@
 .btn{
 
-  &--primary{
+  padding: 9px 20px 9px 20px;
+  min-height: 40px;
+
+  font-size: 1em;
+  line-height: 1;
+  font-weight: $font-weight-bold;
+  color: $color-btn-content;
+
+  border-radius: 20px;
+  border: 1px solid $color-btn-bg;
+
+  background-color: $color-btn-bg;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+  transform: translate3d(0, 0, 0);
+  z-index: $z-index-middle;
+
+  &:hover{
+    background-color: $color-btn-bg--hover;
+    border-color: $color-btn-bg--hover;
+  }
+
+  &:focus{
+    background-color: $color-btn-bg--hover;
+    border-color: $color-btn-bg--hover;
+  }
+
+  &__icon{
+    margin-left: 20px;
+    color: inherit;
+    font-size: 20px;
+    line-height: 1;
+    pointer-events: none;
+
+    width: 1em;
+    height: 1em;
 
   }
 
+  .button-ripple{
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate3d(-50%,-50%,0);
+    animation: ripple-button-animation 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  & > .button-ripple{
+    background-color: $color-btn-bg--active;
+  }
+
+  &--blue {
+    color: $color-white;
+    background: $color-blue-1;
+
+    &:hover, &:active, &:focus {
+      background: $color-blue-2;
+    }
+  }
+
+  &--disabled{
+    background-color: $color-btn-bg--disabled !important;
+    border-color: $color-btn-bg--disabled !important;
+    color: $color-btn-content--disabled !important;
+    pointer-events: none;
+  }
+
+  // Mods
   &--secondary{
-    
+    color: $color-btn-content-sec;
+    border-color: $color-btn-bg-sec;
+    background-color: $color-btn-bg-sec;
+
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.35);
+
+    font-size: 1rem;
+    min-height: 48px;
+    border-radius: 24px;
+
+    &:hover{
+      background-color: $color-btn-bg-sec--hover;
+      border-color: $color-btn-bg-sec--hover;
+      box-shadow: 0 12px 18px 0 rgba(0,0,0,0.2);
+      color: $color-btn-content-sec;
+    }
+
+    &:focus{
+      background-color: $color-btn-bg-sec--hover;
+      border-color: $color-btn-bg-sec--hover;
+      box-shadow: none;
+    }
+
+    &.btn--disabled{
+      background-color: $color-btn-bg-sec--disabled !important;
+      border-color: $color-btn-bg-sec--disabled !important;
+      color: $color-btn-content-sec--disabled !important;
+      box-shadow: none;
+    }
+
+    .btn__icon{
+      font-size: 24px;
+    }
+
+    .button-ripple{
+      background-color: $color-btn-bg-sec--active;
+    }
+  }
+
+  &--markets {
+    font-size: 14px;
+  }
+
+  &--modal-simple {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-white;
+
+    &:hover, &:active, &:focus {
+      background: none;
+    }
+  }
+
+  &--inverted{
+    color: $color-btn-content-inv;
+    border-width: 2px;
+    border-color: $color-btn-content-inv;
+    background-color: $color-btn-bg-inv;
+
+    &:hover{
+      background-color: $color-btn-bg-inv--hover;
+      color: $color-btn-content-inv--hover;
+      border-color: $color-btn-content-inv--hover;
+    }
+
+    &:focus{
+      background-color: $color-btn-bg-inv--hover;
+      color: $color-btn-content-inv--hover;
+      border-color: $color-btn-content-inv--hover;
+    }
+
+    &.btn--disabled{
+      background-color: $color-btn-bg-inv--disabled !important;
+      border-color: $color-btn-content-inv--disabled !important;
+      color: $color-btn-content-inv--disabled !important;
+    }
+
+    .button-ripple{
+      background-color: $color-btn-bg-inv--active;
+    }
+  }
+
+  &--inverted-border-blue {
+    border-color: $color-btn-content-inv--hover;
+  }
+
+  &--modal{
+    color: $color-btn-content-sec;
+    border-color: $color-btn-bg-sec;
+    background-color: $color-btn-bg-sec;
+
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.35);
+
+    font-size: 1rem;
+    min-height: 48px;
+    border-radius: 24px;
+
+    &:hover{
+      background-color: $color-btn-bg-sec--hover;
+      border-color: $color-btn-bg-sec--hover;
+      box-shadow: 0 16px 18px 0 rgba(0,0,0,0.2);
+      color: $color-btn-content-sec;
+
+      .btn__icon{
+        transform: translateX(5px);
+      }
+    }
+
+    &:focus{
+      background-color: $color-btn-bg-sec--hover;
+      border-color: $color-btn-bg-sec--hover;
+      box-shadow: none;
+    }
+
+    &.btn--disabled{
+      background-color: $color-btn-bg-sec--disabled !important;
+      border-color: $color-btn-bg-sec--disabled !important;
+      color: $color-btn-content-sec--disabled !important;
+      box-shadow: none;
+    }
+
+    .button-ripple{
+      background-color: $color-btn-bg-sec--active;
+    }
+
+    .btn__icon{
+      margin-left: 15px;
+      font-size: 24px;
+    }
+  }
+
+  &--narrow{
+    min-height: inherit;
+    height: 40px;
+    padding-top: 7px;
+    padding-bottom:7px;
+  }
+}
+
+.btn-link{
+  font-family: $font-family-main;
+  font-weight: $font-weight-main;
+  line-height: 1;
+
+  background: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+
+  @include link-state($color-input-content,
+                      $color-input-content,
+                      $color-main,
+                      $color-main,
+                      $color-main);
+
+  &__text{
+
+  }
+
+  &__icon{
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  &__cross{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+
+    &::before, &::after{
+      position: absolute;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    &:before{
+      transform: rotate(45deg);
+      top: 5px;
+      left: -1px;
+    }
+
+    &::after{
+      transform: rotate(-45deg);
+      top: 5px;
+      left: -1px;
+    }
+  }
+
+  &.is-disabled{
+    color: $color-btn-link--disabled;
+    pointer-events: none;
+  }
+
+  &--secondary{
+    @include link-state($color-main,
+                        $color-main,
+                        $color-main,
+                        $color-btn-link--hover-secondary,
+                        $color-btn-link--hover-secondary);
+  }
+
+  &--in-modal{
+    @include link-state($color-text-modal,
+                        $color-text-modal,
+                        $color-text-modal,
+                        $color-main--fourth,
+                        $color-main--fourth);
+  }
+
+  &--bold{
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main--bold;
+  }
+
+  &.t-light-cyan{
+    @include link-state($color-main--sixth,
+            $color-main--sixth,
+            $color-main--sixth,
+            $color-white,
+            $color-white);
+  }
+
+  &.t-white{
+    @include link-state($color-white,
+            $color-white,
+            $color-white,
+            $color-main,
+            $color-main);
+  }
+
+  &.t-white-only{
+    @include link-state($color-white,
+            $color-white,
+            $color-white,
+            $color-white,
+            $color-white);
+  }
+
+  &.is-active{
+    color: $color-btn-link--hover-secondary;
+  }
+}
+
+.btn-row{
+  background-color: $color-bg-head-table;
+  border: none;
+  outline: none;
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+
+  &__icon{
+    color: $color-main;
+    font-size: 1.15em;
+    margin-right: 10px;
+  }
+
+  &__text{
+    color: $color-main;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main--bold;
   }
 }

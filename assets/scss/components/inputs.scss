@@ -1,0 +1,502 @@
+.checkbox-field{
+
+  display: inline-block;
+
+  &__label{
+    position: relative;
+    line-height: 1;
+    color: $color-input-content;
+    font-weight: $font-weight-main;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &::before{
+      content: '\f12c';
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      margin-right: 9px;
+
+      border: 1px solid $color-input-content;
+      border-radius: 2px;
+      flex-shrink: 0;
+      font-family: 'Material Design Icons';
+      color: transparent;
+
+      transition: all 0.2s;
+      transition-timing-function: ease-out;
+      will-change: background-color, color;
+    }
+
+    &::after{
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -5px;
+      margin-left: -5px;
+
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+
+      margin-right: 9px;
+      border-radius: 2px;
+
+      background-color: $color-input--event;
+
+      transition: opacity 0.2s;
+      transition-timing-function: ease-out;
+    }
+
+    &.is-partially-checked{
+      &::before{
+        background: transparent !important;
+      }
+      &::after{
+        opacity: 1;
+        left: 8px;
+      }
+    }
+  }
+
+  &__input{
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    &:checked{
+      &+.checkbox-field__label{
+        color: $color-input-text;
+        &::before{
+          color: #ffffff;
+          border-color: $color-input--event;
+          background-color: $color-input--event;
+        }
+      }
+    }
+  }
+
+  &:hover{
+    .checkbox-field{
+      &__label{
+        color: $color-input--event;
+        &::before{
+          border-color: $color-input--event;
+        }
+      }
+    }
+  }
+
+  &.is-disabled{
+    pointer-events: none;
+
+    .checkbox-field{
+      &__label{
+        color: $color-input-content-thirdly !important;
+        &::before{
+          border-color: $color-input-content-thirdly !important;
+        }
+      }
+    }
+  }
+
+  &.t-in-modal{
+    .checkbox-field{
+      &__label{
+        color: $color-input-content--secondary;
+        &::before{
+          border-color: $color-input-content--secondary;
+        }
+      }
+      &__input{
+        &:checked{
+          &+.checkbox-field__label{
+            color: $color-input-bg--secondary;
+            &::before{
+              border-color: $color-input--event;
+              background-color: $color-input--event;
+            }
+          }
+        }
+      }
+      &:hover{
+        &__label{
+          color: $color-input--event;
+          &::before{
+            border-color: $color-input--event;
+          }
+        }
+      }
+    }
+  }
+
+  &.t-white{
+    .checkbox-field{
+      &__label{
+        color: $color-input-content--fourthly;
+        &::before{
+          border-color: $color-input-content--thirdly;
+        }
+      }
+      &__input{
+        &:checked{
+          &+.checkbox-field__label{
+            color: $color-input-bg--secondary;
+            &::before{
+              color: $color-input--event;
+
+              border-color: $color-input-bg--secondary;
+              background-color: $color-input-bg--secondary;
+            }
+          }
+        }
+      }
+    }
+    &:hover{
+      .checkbox-field__label{
+        color: $color-input-content--thirdly;
+        &::before{
+          border-color: $color-input-bg--secondary;
+        }
+      }
+    }
+  }
+
+  &--clients{
+    padding: 30px 0;
+    .checkbox-field__label{
+      align-items: flex-start;
+    }
+  }
+}
+
+.input-field{
+
+  position: relative;
+
+  &__label{
+    color: $color-input-content;
+    margin-right: 10px;
+  }
+
+  &__icon{
+    width: 20px;
+    height: 20px;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    position: absolute;
+    top: 6px;
+    right: 12px;
+
+    cursor: pointer;
+
+    &--password{
+      &::before{
+        position: absolute;
+        font-size: 16px;
+        color: $color-input-content--secondary;
+        font-family: 'Material Design Icons';
+
+        top: 5px;
+        left: 7px;
+      }
+    }
+
+    &.t-pass-visible{
+      &::before{
+        content: '\F208';
+      }
+    }
+
+    &.t-pass-hidden{
+      &::before{
+        content: '\F209';
+      }
+    }
+  }
+
+  &__input{
+    padding: 10px 10px 10px 10px;
+    background: $color-input-bg;
+    color: $color-input-text;
+
+    font-size: 1em;
+    line-height: 1;
+
+    border: 1px solid $color-input-content-thirdly;
+    border-radius: 20px;
+
+    min-height: 40px;
+    outline: none;
+
+    transition: all 0.3s;
+
+    &::placeholder{
+      color: $color-input-content;
+    }
+
+    &:hover{
+      border-color: $color-input--event;
+      background-color: $color-input-bg--thirdly;
+      &::placeholder{
+        color: $color-input-content;
+      }
+    }
+
+    &:focus{
+      background: $color-input-bg--secondary;
+      border-color: $color-input--event;
+      color: $color-input-text;
+
+      &::placeholder{
+        opacity: 0;
+      }
+    }
+  }
+
+  &--large{
+    .input-field{
+      &__input{
+        padding: 17px 10px 17px 30px;
+        min-height: 64px;
+        border-radius: 32px;
+        font-size: 1.71em;
+        font-weight: $font-weight-light;
+        font-family: $font-family-main--light;
+      }
+    }
+  }
+
+  &.is-disabled{
+    .input-field__input{
+      pointer-events: none;
+      color: $color-input-content-thirdly;
+      border-color: $color-input-content-thirdly;
+      background: $color-input-bg--thirdly;
+
+      &::placeholder{
+        color: $color-input-content-thirdly;
+      }
+    }
+  }
+}
+
+.radio-field{
+
+  display: inline-block;
+  cursor: pointer;
+
+  &__label{
+    position: relative;
+    line-height: 1;
+    color: $color-input-content;
+    font-weight: $font-weight-main;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &::before{
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      margin-right: 9px;
+
+      border: 1px solid $color-input-content;
+      border-radius: 50%;
+
+      transition: all 0.2s;
+      transition-timing-function: ease-out;
+    }
+
+    &::after{
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: $color-input--event;
+      border-radius: 50%;
+
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+
+      transition: all 0.3s;
+      opacity: 0;
+    }
+  }
+
+  &__input{
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    &:checked{
+      &+.radio-field__label{
+        color: $color-input-text;
+        &::before{
+          border-color: $color-input-content;
+        }
+        &::after{
+          opacity: 1;
+        }
+      }
+
+      &:hover{
+        &::before{
+          border-color: $color-input--event;
+        }
+      }
+
+    }
+  }
+
+  &:hover{
+    .radio-field{
+      &__label{
+        color: $color-input--event;
+        &::before{
+          border-color: $color-input--event;
+        }
+      }
+    }
+  }
+
+  &.is-disabled{
+    pointer-events: none;
+
+    .radio-field{
+      &__label{
+        color: $color-input-content-thirdly !important;
+        &::before{
+          border-color: $color-input-content-thirdly !important;
+        }
+      }
+    }
+  }
+
+  &.in-modal{
+    .radio-field{
+      &__label{
+        color: $color-text-modal;
+        &::before{
+          border-color: $color-text-modal;
+        }
+      }
+    }
+  }
+}
+
+.date-field{
+
+  position: relative;
+
+  &::before{
+    content: '\F0ED';
+    font-family: "Material Design Icons";
+    font-size: 20px;
+    line-height: 1;
+    color: $color-input-content--secondary;
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__label{
+    color: $color-input-content;
+    margin-right: 10px;
+  }
+
+  &__input{
+    max-width: 160px;
+    padding: 10px 50px 10px 20px;
+    background: $color-input-bg;
+    color: $color-input-text;
+
+    font-size: 1em;
+    line-height: 1;
+
+    border: 1px solid $color-input-content-thirdly;
+    border-radius: 20px;
+
+    min-height: 40px;
+    outline: none;
+
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &::placeholder{
+      color: $color-input-content;
+    }
+
+    &:hover{
+      border-color: $color-input--event;
+      color: $color-input-text;
+      background-color: $color-input-bg--thirdly;
+    }
+
+    &:focus{
+      background: $color-input-bg--secondary;
+      border-color: $color-input--event;
+      color: $color-input-text;
+
+      &::placeholder{
+        opacity: 0;
+      }
+    }
+  }
+
+  &.is-disabled{
+    .date-field__input{
+      pointer-events: none;
+      color: $color-input-content-thirdly;
+      border-color: $color-input-content-thirdly;
+      background: $color-input-bg--thirdly;
+
+      &::placeholder{
+        color: $color-input-content-thirdly;
+      }
+    }
+  }
+}

@@ -1,21 +1,21 @@
 const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
 const runSequence = require('run-sequence');
-const del = require('del');
 const watch = require('gulp-watch');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
 const cssnano = require('gulp-cssnano');
+const plumber = require('gulp-plumber');
 
 const scssFiles = ['./assets/scss/**/*.scss'];
-
+const scssMain = ['./assets/scss/main.scss'];
 const pathStyleDest = './assets/css';
 
 // SASS
 gulp.task('style', function () {
-  return gulp.src('./assets/scss/main.scss')
+  return gulp.src(scssMain)
+    .pipe(plumber({errorHandler: notify.onError("Style Build Error: <%= error.message %>")}))
     .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(autoprefixer('last 4 version'))
@@ -25,7 +25,8 @@ gulp.task('style', function () {
 });
 
 gulp.task('style-build', function () {
-  return gulp.src('./assets/scss/main.scss')
+  return gulp.src(scssMain)
+    .pipe(plumber({errorHandler: notify.onError("Style Build Error: <%= error.message %>")}))
     .pipe(sass())
     .on('error', onError)
     .pipe(autoprefixer('last 4 version'))

@@ -16,12 +16,17 @@ body{
 
 ol, ul{
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 // Links
 a{
   color: $color-link;
+  transition: all 0.3s;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
 
   &:visited{
     color: $color-link--visited;
@@ -29,6 +34,7 @@ a{
 
   &:focus{
     color: $color-link--focus;
+    outline: none;
   }
 
   &:hover{
@@ -38,25 +44,79 @@ a{
   &:active{
     color: $color-link--active;
   }
+
+  &.link{
+
+    &::before{
+      content: "";
+      width: 0%;
+      height: 1px;
+      background: $color-link;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+
+      transition: all 0.3s;
+    }
+
+    &:focus{
+      color: $color-link--focus;
+      outline: none;
+      &::before{
+        width: 100%;
+      }
+    }
+
+    &:hover{
+      color: $color-link--hover;
+      &::before{
+        width: 100%;
+      }
+    }
+
+    &--bold{
+      font-weight: $font-weight-bold;
+
+      &::before{
+        height: 2px;
+      }
+    }
+
+    &--inverted{
+      color: #ffffff;
+      &:visited{
+        color: #ffffff;
+      }
+
+      &:focus{
+        color: #ffffff;
+        outline: none;
+      }
+
+      &:hover{
+        color: #ffffff;
+      }
+
+      &:active{
+        color: #ffffff;
+      }
+      &::before{
+        background: #ffffff;
+      }
+    }
+  }
 }
 
 // Buttons
 input[type="button"], button{
-  color: $color-btn-text;
-  background: $color-btn-bg;
+  padding: 0;
+  margin: 0;
+}
 
-  &:focus{
-    color: $color-btn-text--focus;
-    background: $color-btn-bg--focus;
-  }
-
-  &:hover{
-    color: $color-btn-text--hover;
-    background: $color-btn-bg--hover;
-  }
-
-  &:active{
-    color: $color-btn-text--active;
-    background: $color-btn-bg--active;
-  }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

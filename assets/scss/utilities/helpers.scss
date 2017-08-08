@@ -1,15 +1,197 @@
 // Margin helpers
-@for $i from 0 through 6 {
+@for $i from 0 through 15 {
   .mb#{$i * 5} { margin-bottom: 5px * $i; }
 }
-@for $i from 0 through 6 {
+@for $i from 0 through 15 {
   .mt#{$i * 5} { margin-top: 5px * $i; }
+}
+@for $i from 0 through 15 {
+  .ml#{$i * 5} { margin-left: 5px * $i; }
+}
+@for $i from 0 through 15 {
+  .mr#{$i * 5} { margin-right: 5px * $i; }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .ml-auto-#{$breakpoint}{
+    margin-left: 0;
+    @media screen and (min-width: map-get($grid-breakpoints, $breakpoint)){
+      margin-left: auto !important;
+    }
+  }
+}
+
+.mlr-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.ml-auto{
+  margin-left: auto !important;
 }
 
 // Padding helpers
-@for $i from 0 through 6 {
+@for $i from 0 through 20 {
   .pb#{$i * 5} { padding-bottom: 5px * $i; }
 }
-@for $i from 0 through 6 {
+@for $i from 0 through 20 {
   .pt#{$i * 5} { padding-top: 5px * $i; }
+}
+@for $i from 0 through 20 {
+  .pl#{$i * 5} { padding-left: 5px * $i; }
+}
+@for $i from 0 through 20 {
+  .pr#{$i * 5} { padding-right: 5px * $i; }
+}
+@for $i from 0 through 6 {
+  .p#{$i * 5} { padding: 5px * $i; }
+}
+
+// Row items
+@for $i from 2 through 6 {
+  .hor-#{$i * 5} {
+    margin-left: -(2.5px * $i) !important;
+    margin-right: -(2.5px * $i) !important;
+
+    & > * {
+      margin-left: 2.5px * $i;
+      margin-right: 2.5px * $i;
+    }
+  }
+}
+
+@for $i from 2 through 6 {
+  .ver-#{$i * 5} {
+    margin-top: -(2.5px * $i) !important;
+    margin-bottom: -(2.5px * $i) !important;
+
+    & > * {
+      margin-top: 2.5px * $i;
+      margin-bottom: 2.5px * $i;
+    }
+  }
+}
+
+// Flex
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .nowrap-#{$breakpoint}{
+    @media screen and (min-width: map-get($grid-breakpoints, $breakpoint)){
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.nowrap{
+  flex-wrap: nowrap;
+}
+
+// Display
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .shown-#{$breakpoint}{
+    display: none !important;
+    @media screen and (min-width: map-get($grid-breakpoints, $breakpoint)){
+      display: block !important;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints-max) {
+  .shown-until-#{$breakpoint}{
+    @media screen and (max-width: map-get($grid-breakpoints-max, $breakpoint)){
+      display: none !important;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints-max) {
+  .hidden-up-#{$breakpoint}{
+    display: none !important;
+    @media screen and (max-width: map-get($grid-breakpoints-max, $breakpoint)){
+      display: block !important;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints-max) {
+  .hidden-down-#{$breakpoint}{
+    display: none !important;
+    @media screen and (min-width: map-get($grid-breakpoints, $breakpoint)){
+      display: block !important;
+    }
+  }
+}
+
+.inline{
+  display: inline !important;
+}
+
+.relative{
+  position: relative;
+}
+
+// Dimensions
+.width-max{
+  width: 100%;
+}
+.width-100{
+  width: 100px;
+}
+.width-270{
+  width: 270px;
+}
+
+.width-270-md{
+  @media screen and (min-width: $brp-md){
+    width: 270px;
+  }
+}
+
+.width-330-lg{
+  @media screen and (min-width: $brp-lg){
+    width: 330px;
+  }
+}
+
+.width-270-sm{
+  @media screen and (min-width: $brp-sm){
+    width: 270px;
+  }
+}
+
+@for $i from 10 through 30 {
+  .min-width-#{$i * 5} { min-width: 5px * $i; }
+}
+
+// Nowrap and ellipsis
+.nowrap{
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &__content{
+    white-space: nowrap;
+  }
+}
+
+// Common
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .text-center-#{$breakpoint}{
+    text-align: center;
+    @media screen and (min-width: map-get($grid-breakpoints, $breakpoint)){
+      text-align: inherit;
+    }
+  }
+}
+
+.visuallyhidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

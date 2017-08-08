@@ -1,0 +1,57 @@
+.fadeIn-enter {
+  opacity: 0.01;
+}
+
+.fadeIn-enter.fadeIn-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fadeIn-leave {
+  opacity: 1;
+}
+
+.fadeIn-leave.fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.fadeIn-appear {
+  opacity: 0.01;
+}
+
+.fadeIn-appear.fadeIn-appear-active {
+  opacity: 1;
+
+  transition: opacity 0.3s ease-in;
+}
+
+// Slide
+
+
+//////////////////////////////////////////////////
+// Button
+@keyframes ripple-button-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
+}
+
+//////////////////////////////////////////////////
+// Common animations
+.animated{
+  transition: all 0.3s;
+}
+
+.fade-in{
+  opacity: 1;
+}
+
+.fade-out{
+  opacity: 0;
+}

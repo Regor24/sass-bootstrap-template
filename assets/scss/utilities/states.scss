@@ -1,0 +1,133 @@
+// Forms validation
+.validation{
+  font-size: 0.85em;
+  line-height:1;
+
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  animation-name: validationMessage;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+
+  opacity: 0;
+
+  // Temp
+  color: $color-state-danger;
+}
+
+@keyframes validationMessage {
+  from{
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(12px);
+  }
+}
+
+.field-error{
+  color: $color-state-danger;
+}
+
+.field-warning{
+  color: $color-state-warning;
+}
+
+.field-validated{
+  color: $color-state-ok;
+}
+
+.error{
+  .input-field__input, .field-component__input-group{
+    border-color: $color-state-danger;
+  }
+  .validation{
+    color: $color-state-danger;
+  }
+}
+
+
+// Text
+.font-regular{
+  font-weight: $font-weight-reg !important;
+  font-family: $font-family-main !important;
+}
+
+.font-bold{
+  font-weight: $font-weight-bold !important;
+  font-family: $font-family-main--bold !important;
+}
+
+.font-light{
+  font-weight: $font-weight-light !important;
+  font-family: $font-family-main--light !important;
+}
+
+.font-thin{
+  font-weight: $font-weight-thin !important;
+  font-family: $font-family-main--thin !important;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.text-danger{
+  font-size: 12px;
+  line-height:1.2;
+  color: $color-state-danger;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-main--bold;
+}
+
+.text-ok{
+  font-size: 12px;
+  line-height:1.2;
+  color: $color-state-ok;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-main--bold;
+}
+
+.text-light-cyan{
+  color: $color-main--sixth;
+}
+
+.text-muted{
+  color: $color-text-pale;
+  font-size: 0.85em;
+  line-height: 1.2;
+
+  &--normal{
+    font-size: 1.2em;
+  }
+}
+
+.text-small{
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+
+.text-dark{
+  color: $color-header;
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+
+.text-white{
+  color: #ffffff !important;
+}
+
+.break-word{
+  word-wrap: break-word;
+}
+
+.font-size-18{
+  font-size: 18px;
+}

@@ -1,0 +1,226 @@
+.field-component{
+
+  position: relative;
+
+  &__input-group{
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 19px 70px 17px 30px;
+    border-radius: 32px;
+    border: 1px solid $color-input-content-thirdly;
+    background: $color-input-bg;
+    cursor: text;
+    transition: all 0.3s;
+
+    @media screen and (min-width: $brp-sm){
+      padding: 19px 100px 17px 30px;
+    }
+
+    &:hover{
+      border-color: $color-input--event;
+      background-color: $color-input-bg--thirdly;
+      .field-component__icon{
+        fill: $color-search-icon--hover;
+      }
+    }
+
+    &.is-focused{
+      background: $color-input-bg--secondary;
+      border-color: $color-input--event;
+      .field-component__icon{
+        fill: $color-search-icon--hover;
+      }
+      .field-component__input{
+        &::placeholder{
+          opacity: 1;
+        }
+      }
+    }
+
+    &.is-disabled{
+      pointer-events: none;
+    }
+  }
+
+  &__input-wrap{
+    position: relative;
+  }
+
+  &__input-markets {
+    width: 100%;
+    height: 40px;
+    padding: 10px 100px 10px 0;
+
+    @media screen and (min-width: $brp-sm) {
+      width: 470px;
+    }
+  }
+
+  &__fader{
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 30px;
+    height: 100%;
+
+    transition: none;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 50%, rgba(237,241,242,1) 100%);
+  }
+
+  &__input{
+    padding: 0;
+    bottom: 0;
+    background: transparent;
+    border: none;
+    width: 100%;
+    color: $color-input-text;
+    text-overflow: ellipsis;
+    font-size: 1.72em;
+    line-height: 1.1;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+    max-height: 1.1em;
+
+    transition: all 0.3s;
+
+    &::placeholder{
+      opacity: 0;
+    }
+
+    &:focus{
+      outline: none;
+      transform: translateY(8px);
+
+      & ~ .field-component__fader{
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 50%, rgba(255,255,255,1) 100%);
+      }
+
+      & + .field-component__label{
+        font-size: 0.85em;
+        top: -8px;
+      }
+    }
+
+    &--simple {
+      font-size: 1em;
+      padding: 0.85em 0 0.85em 1.4em;
+      font-weight: normal;
+      color: $color-gray-15;
+
+      &:focus {
+        transform: none;
+      }
+    }
+
+    &.is-filled{
+      transform: translateY(8px);
+
+      &+.field-component__label{
+        font-size: 0.85em;
+        top: -8px;
+      }
+    }
+  }
+
+  &__label{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: $color-input-content;
+    font-size: 1.72em;
+    line-height: 1;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+
+    transition: all 0.3s;
+  }
+
+  &__icon{
+    fill: $color-search-icon;
+    transition: all 0.3s;
+
+    &.is-iconfont{
+      color: $color-search-icon;
+      font-size: 24px;
+      line-height: 1;
+    }
+  }
+
+  &__icon-static {
+    fill: $color-search-icon;
+  }
+
+  &__submit{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+
+    padding: 10px 10px 8px 10px;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    z-index: $z-index-middle;
+
+    &:hover{
+      .field-component__icon{
+        fill: $color-search-icon--focus-hover;
+      }
+    }
+
+    &--simply {
+      padding-right: 0;
+    }
+
+    &--static {
+      cursor: default;
+    }
+  }
+
+  &__additional{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media screen and (min-width: $brp-lg){
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &--row-md{
+      @media screen and (min-width: $brp-md){
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &--modal{
+      flex-direction: row;
+    }
+  }
+  
+  &--text-center{
+    .field-component{
+      &__input-group{
+        padding-right:30px;
+      }
+      &__input{
+        text-align: center;
+      }
+      &__label{
+        text-align: center;
+      }
+    }
+  }
+}

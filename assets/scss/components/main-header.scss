@@ -1,3 +1,128 @@
 .main-header{
-  
+
+  background: $color-bg-main-header;
+
+  @supports (height: var(--mainFooterHeight)){
+    position: relative;
+    z-index: $z-index-max;
+  }
+
+  @media screen and (max-width: $brp-mobile-menu--max){
+    z-index: $z-index-menu;
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $brp-mobile-menu){
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__list{
+    display: inline-block;
+    line-height: 0;
+  }
+
+  &__item{
+    display: inline-block;
+    border-bottom: 1px solid $color-border-main-header;
+
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: $brp-mobile-menu) {
+      border-left: 1px solid $color-border-main-header;
+      width: auto;
+    }
+
+    &::before{
+      @media screen and (min-width: $brp-mobile-menu){
+        content: '';
+        width: 100%;
+        height: 5px;
+        background-color: $color-main;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        transition: all 0.3s;
+      }
+    }
+
+    &:hover{
+      &::before{
+        background-color: $color-main;
+        bottom: 0;
+      }
+      .main-header__link{
+        @media screen and (min-width: $brp-mobile-menu){
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  &__link{
+    padding: 13px 30px 12px 30px;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    text-align: initial;
+    width: 100%;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    @include link-state($color-link-header,
+                        $color-link-header--visited,
+                        $color-link-header--focus,
+                        $color-link-header--hover,
+                        $color-link-header--active);
+
+
+    @media screen and (min-width: $brp-mobile-menu) {
+      width: auto;
+    }
+
+    &:visited{
+      background: none;
+    }
+    &:focus{
+      background: none;
+    }
+    &:hover{
+      background: none;
+    }
+    &:active{
+      background: none;
+    }
+
+    & > span{
+      display: block;
+      margin-bottom: 5px;
+      @media screen and (min-width: $brp-mobile-menu){
+        display: inline;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon{
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }

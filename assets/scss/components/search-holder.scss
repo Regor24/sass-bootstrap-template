@@ -1,0 +1,121 @@
+.search-holder{
+  padding: 30px 0px 60px 0px;
+  background-color: $color-main;
+
+  @media screen and (min-width: $brp-lg){
+    padding: 60px 0px 90px 0px;
+  }
+
+  &__inner{
+    background-color: $color-bg-search;
+    border-radius: 4px;
+
+    position: relative;
+  }
+
+  &__simple{
+    padding: 30px 15px 30px 15px;
+    position: relative;
+
+    @media screen and (min-width: $brp-lg){
+      padding: 30px 100px 30px 100px;
+    }
+  }
+
+  &__extend{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -100px;
+    height: 30px;
+    width: 200px;
+    transition: transform 0.3s;
+
+    &:hover{
+      transform: translateY(5px);
+      .search-holder{
+        &__extend-btn{
+          color: $color-extend-search--hover;
+        }
+      }
+    }
+
+    &--reverse{
+      transform: translateY(5px);
+      &:hover{
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  &__extend-btn{
+    display: flex;
+    vertical-align: middle;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 20px 10px 10px 10px;
+
+    top: -20px;
+
+    background-color: transparent;
+    border: none;
+    color: $color-extend-search;
+
+    outline: none;
+    position: relative;
+
+    transition: color 0.3s;
+    cursor: pointer;
+
+    &:focus{
+      outline: none;
+      color: $color-extend-search--hover;
+    }
+  }
+
+  &__extend-text{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    margin-right: 9px;
+    color: inherit;
+    width: 100px;
+
+    @media screen and (min-width: $brp-sm) {
+      width: auto;
+    }
+  }
+
+  &__extend-icon{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__extend-background{
+    position: absolute;
+    top: -30px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    fill: $color-bg-search;
+
+    &--large{
+      display: none;
+      @media screen and (min-width: $brp-sm) {
+        display: block;
+      }
+    }
+
+    &--small{
+      display: none;
+      @media screen and (max-width: $brp-sm--max) {
+        display: block;
+      }
+    }
+  }
+}

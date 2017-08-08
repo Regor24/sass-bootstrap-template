@@ -1,0 +1,350 @@
+// React datepicker
+.react-datepicker{
+  background-color: #ffffff !important;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0, 0.35) !important;
+  border: 1px solid #dadee0 !important;
+  border-radius: 20px !important;
+  color: #293033 !important;
+  font-size: 1em !important;
+
+  &__header{
+    border-radius: 20px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    padding-top: 12px !important;
+  }
+
+  &__current-month{
+    color: $color-main !important;
+    text-transform: capitalize !important;
+    font-size: 1em !important;
+    position: relative;
+    padding-bottom: 12px !important;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      height: 1px;
+      background-color: #dadee0;
+    }
+  }
+
+  &__month{
+    margin: 0px 20px 10px 20px !important;
+  }
+
+  &__day{
+    font-size: 12px !important;
+    line-height: 2.5 !important;
+    margin: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    transition: all 0.3s !important;
+    font-weight: $font-weight-reg !important;
+    color: #293033 !important;
+
+    &--today{
+      border: 1px solid #dadee0 !important;
+      font-weight: $font-weight-reg !important;
+      background-color: none !important;
+    }
+
+    &--outside-month{
+      color: #a1a4a6 !important;
+    }
+
+    &:hover{
+      background-color: $color-main--sixth !important;
+      color: $color-main !important;
+      border-color: $color-main--sixth !important;
+    }
+
+    &--keyboard-selected, &--selected{
+      background-color: $color-main !important;
+      color: #ffffff !important;
+      box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  &__day-names{
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      height: 1px;
+      background-color: #dadee0;
+    }
+  }
+
+  &__day-name{
+    font-size: 0.85rem !important;
+    line-height: 2.5 !important;
+    color: #6f7273 !important;
+    margin: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+
+  &__triangle{
+    opacity: 0 !important;
+  }
+
+  &__navigation{
+    width: 20px !important;
+    height: 20px !important;
+    border: none !important;
+    top: 12px !important;
+
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 2px;
+      background-color: #293033;
+      transition: all 0.3s;
+    }
+
+    &--previous{
+      left: 20px !important;
+      &::before{
+        transform: rotate(45deg);
+        top: 11px;
+        left: 6px;
+      }
+      &::after{
+        transform: rotate(-45deg);
+        top: 6px;
+        left: 6px;
+      }
+    }
+
+    &--next{
+      right: 20px !important;
+      &::before{
+        transform: rotate(-45deg);
+        top: 11px;
+        left: 6px;
+      }
+      &::after{
+        transform: rotate(45deg);
+        top: 6px;
+        left: 6px;
+      }
+    }
+
+    &:hover{
+      &::before, &::after{
+        background-color: $color-main;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////
+// React range
+$input-range-track-background: $color-input-bg--thirdly;
+
+$input-range-primary-color: $color-input--event;
+
+$input-range-slider-background: $color-input-bg--secondary;
+$input-range-slider-border: none;
+
+.input-range{
+  &__track{
+    border-radius: 4px !important;
+    height: 8px !important;
+    border: 1px solid $color-input-content-thirdly;
+
+    &--active{
+      border: none !important;
+    }
+  }
+
+  &__slider{
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0, 0.35);
+    height: 20px !important;
+    width: 20px !important;
+    margin-top: -14px !important;
+  }
+
+  &__label{
+    display: none;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////
+// React-select-me
+.dd__crossIcon{
+  display: none;
+}
+
+.dd__expandIcon{
+  position: absolute;
+  right: 10px;
+  width: auto !important;
+  height: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  @media screen and (min-width: $brp-sm) {
+    right: 15px;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////
+// React-select
+// Радиус бордеров селекта
+$select-input-border-radius: 20px;
+$select-item-border-radius: 20px;
+
+// Одинаковая тень для раскрытого
+$select-input-box-shadow-focus: 0px 6px 10px 0px rgba(0, 0, 0, 0.35);
+$select-menu-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.35);
+
+// Бг свернутого селекта
+$select-input-bg: $color-input-bg;
+
+// Бордер раскрытого селекта
+$select-input-border-focus: $color-blue-1;
+
+// Паддинги, отвечающие за размеры селекта
+$select-padding-vertical:           12px;
+$select-padding-horizontal:         20px;
+
+// Выбранное в мультиселекте
+$select-item-font-size: 1em;
+$select-item-color: $color-input-text;
+$select-item-border-color: transparent;
+$select-item-bg: transparent;
+
+// Ховер по позиции в выпадашке
+$select-option-focused-color: $color-blue-1;
+
+.Select-control{
+  &::before{
+    content: "";
+    height: 1px;
+    background: $color-input-content-thirdly;
+
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+
+    opacity: 0;
+    z-index: 1100;
+  }
+}
+
+.Select-menu{
+  border-radius: $select-input-border-radius;
+}
+
+.Select-menu-outer{
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+.Select{
+
+  max-width: 300px;
+
+  &:hover{
+    .Select-control{
+      border-color: $color-input--event;
+    }
+  }
+
+  // Выпадашка раскрыта
+  &.is-open{
+
+    .Select-control{
+      background: $color-input-bg--secondary;
+      border-bottom: none;
+
+      &::before{
+        opacity: 1;
+      }
+    }
+
+    // Вся выпадашка в раскрытом состоянии
+    .Select-menu-outer{
+      background: $color-input-bg--secondary;
+      border-top: none;
+      border-color: $color-input--event;
+      .Select-option{
+        background: $color-input-bg--secondary;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &--multi{
+    .Select-option{
+      .is-selected{
+        display: block !important;
+      }
+    }
+    .Select-control{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .Select-value{
+      margin-left: 15px !important;
+    }
+    .Select-value-icon{
+      display: none !important;
+    }
+    .Select-value-label{
+      border: none !important;
+      background: none !important;
+      white-space: nowrap;
+    }
+    .Select-multi-value-wrapper{
+      .Select-value{
+        &:not(:first-child){
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////
+// React modal
+.ReactModal{
+
+  &__Overlay{
+    z-index: $z-index-modal !important;
+    background-color: $color-overlay-modal !important;
+    opacity: 0.98;
+  }
+}
+
+

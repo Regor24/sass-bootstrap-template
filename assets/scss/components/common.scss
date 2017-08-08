@@ -1,0 +1,268 @@
+.okpd{
+  &__child{
+    position: relative;
+    margin-left: 30px;
+  }
+}
+
+.admin-counter-bar{
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.custom-counter{
+  font-size: 18px;
+  font-weight: 200;
+  &__count{
+    font-weight: bold;
+  }
+}
+
+// Lists - date setting for templates
+.list{
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item{
+    margin-bottom: 15px;
+  }
+
+  &--nested{
+    padding-left: 25px;
+  }
+}
+
+.captcha{
+  overflow: hidden;
+}
+
+.footer-copyright{
+  color: $color-copyright-footer;
+  font-size: 1em;
+  line-height: 1;
+  font-family: inherit;
+  font-weight: inherit;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $brp-md) {
+    margin: 0;
+  }
+}
+
+.character{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  @media screen and (min-width: $brp-sm){
+    margin-bottom: 0;
+  }
+
+  &__letter{
+    display: inline-block;
+    font-weight: $font-weight-thin;
+    font-family: $font-family-main--thin;
+    font-size: 36px;
+    line-height: 1;
+    color: $color-text-modal;
+  }
+}
+
+.hamburger{
+  width: 24px;
+  height: 20px;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+
+  &__bar{
+    background-color: $color-main;
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+
+    transition: all 0.6s;
+
+    &:nth-child(1){
+      top: 0;
+    }
+    &:nth-child(2){
+      transition: all 0.3s;
+      top: 8px;
+    }
+    &:nth-child(3){
+      bottom: 0;
+    }
+  }
+
+  &.is-open{
+    .hamburger__bar{
+      &:nth-child(1){
+        top: 8px;
+        animation-name: hamburgerTop;
+      }
+      &:nth-child(2){
+        opacity: 0;
+        animation-name: hamburgerMiddle;
+      }
+      &:nth-child(3){
+        bottom: 8px;
+        animation-name: hamburgerBottom;
+      }
+    }
+  }
+}
+
+@keyframes hamburgerTop {
+  50%, 70%, 90%, to{
+    transform: rotate(45deg);
+  }
+  60%, 95%{
+    transform: rotate(50deg);
+  }
+  80%{
+    transform: rotate(40deg);
+  }
+}
+@keyframes hamburgerBottom {
+  50%, 70%, 90%, to{
+    transform: rotate(-45deg);
+  }
+  60%, 95%{
+    transform: rotate(-50deg);
+  }
+  80%{
+    transform: rotate(-40deg);
+  }
+}
+
+.lot-docs{
+  padding: 30px 15px 30px 15px;
+  @media screen and (min-width: $brp-sm){
+    padding: 30px 30px 30px 30px;
+  }
+
+  &__header{
+    font-size: 1.28em;
+    line-height: 1.333;
+    color: $color-header-lot;
+    margin-bottom: 20px;
+  }
+
+  &__link{
+    display: block;
+    &:not(:last-child){
+      margin-bottom:15px;
+    }
+  }
+}
+
+  .hr{
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $color-border-search;
+  }
+
+.checkbox-multicheck{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &__label{
+    line-height: 1;
+    color: $color-input-content;
+    font-weight: $font-weight-main;
+    transition: all 0.3s;
+  }
+
+  &__check{
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+
+    margin-right: 9px;
+
+    border: 1px solid $color-input-content;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    transition: all 0.2s;
+    transition-timing-function: ease-out;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &::after{
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -5px;
+      margin-left: -5px;
+
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+
+      margin-right: 9px;
+      border-radius: 2px;
+
+      background-color: $color-input--event;
+
+      transition: opacity 0.2s;
+      transition-timing-function: ease-out;
+    }
+
+    &.is-checked-part{
+      &::after{
+        opacity: 1;
+      }
+    }
+
+    &.is-checked-all{
+      background-image: url('../img/check.svg');
+      border-color: $color-input--event;
+      background-color: $color-input--event;
+    }
+
+    &.is-checked-part, &.is-checked-all{
+      & + .checkbox-multicheck__label{
+        color: $color-input-text;
+      }
+    }
+  }
+}

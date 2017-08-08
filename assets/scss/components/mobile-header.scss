@@ -1,0 +1,45 @@
+.mobile-header{
+  padding: 15px 15px 15px 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &::before{
+    content: '';
+    background-color: $color-bg-main-nav;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    pointer-events: none;
+    z-index: $z-index-mobile-menu;
+  }
+
+  &__logo{
+    width: 62px;
+    line-height: 0;
+    position: relative;
+    z-index: $z-index-mobile-menu;
+  }
+
+  &__logo-image{
+    width: 100%;
+    height: auto;
+  }
+
+  &__toggle{
+    z-index: $z-index-menu-hamburger;
+    &.is-open{
+      position: fixed;
+      top: 23px;
+      right: 17px;
+    }
+  } 
+  @media screen and (min-width: $brp-mobile-menu){
+    display: none;
+  }
+}

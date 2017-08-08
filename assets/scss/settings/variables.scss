@@ -2,62 +2,293 @@
 $color-black: #000000;
 $color-white: #ffffff;
 
+$color-gray-1: #e8eaed;
+$color-gray-2: #6c737b;
+$color-gray-3: #1c2633;
+$color-gray-4: #a2a6ab;
+$color-gray-5: #434b56;
+$color-gray-6: #40494d;
+$color-gray-7: #4e585c;
+$color-gray-8: #d7dbde;
+$color-gray-9: #c6cacc;
+$color-gray-10: #f7fafa;
+$color-gray-11: #fffefe;
+$color-gray-12: #283238;
+$color-gray-13: #f2f5f7;
+$color-gray-14: #494b4d;
+$color-gray-15: #293033;
+$color-gray-16: #a1a4a6;
+
+$color-graphite-1: #37404b;
+$color-graphite-2: #4e5660;
+
+$color-blue-1: #0a8efa;
+$color-blue-2: #3b9bfb;
+$color-blue-3: #5ca8ff;
+$color-blue-4: #70a9ff;
+$color-blue-5: #8cbffc;
+$color-blue-6: #dcebfe;
+$color-blue-7: #b7d6fd;
+$color-blue-8: #ecf8fd;
+
 // Colors global
-$color-main: $color-black;
+$color-main: $color-blue-1;
+$color-main--second: $color-blue-2;
+$color-main--third: $color-blue-3;
+$color-main--fourth: $color-blue-4;
+$color-main--fifth: $color-blue-5;
+$color-main--sixth: $color-blue-6;
 
 $color-text-main: $color-black;
 
-$color-body: $color-white;
+$color-body: $color-gray-10;
 
 // Links
-$color-link: $color-black;
-$color-link--hover: $color-black;
-$color-link--active: $color-black;
-$color-link--focus: $color-black;
-$color-link--visited: $color-black;
+$color-link: $color-blue-1;
+$color-link--hover: $color-blue-1;
+$color-link--active: $color-blue-1;
+$color-link--focus: $color-blue-1;
+$color-link--visited: $color-blue-1;
 
+$color-link-sidenav: $color-gray-4;
+
+////////////////////////////////////////////////////
 // Buttons
-$color-btn-bg: $color-black;
-$color-btn-bg--hover: $color-black;
-$color-btn-bg--active: $color-black;
-$color-btn-bg--focus: $color-black;
+// primary
+$color-btn-bg: $color-blue-6;
+$color-btn-bg--hover: $color-blue-7;
+$color-btn-bg--active: $color-blue-1;
+$color-btn-bg--disabled: $color-blue-8;
 
-$color-btn-text: $color-white;
-$color-btn-text--hover: $color-white;
-$color-btn-text--active: $color-white;
-$color-btn-text--focus: $color-white;
+$color-btn-content: $color-blue-1;
+$color-btn-content--hover: $color-blue-1;
+$color-btn-content--active: $color-blue-1;
+$color-btn-content--disabled: $color-blue-7;
+
+// secondary
+$color-btn-bg-sec: $color-blue-1;
+$color-btn-bg-sec--hover: $color-blue-2;
+$color-btn-bg-sec--active: $color-white;
+$color-btn-bg-sec--disabled: $color-blue-6;
+
+$color-btn-content-sec: $color-white;
+$color-btn-content-sec--hover: $color-white;
+$color-btn-content-sec--active: $color-white;
+$color-btn-content-sec--disabled: $color-white;
+
+// inverted
+$color-btn-bg-inv: $color-blue-1;
+$color-btn-bg-inv--hover: $color-white;
+$color-btn-bg-inv--active: $color-blue-1;
+$color-btn-bg-inv--disabled: $color-blue-1;
+
+$color-btn-content-inv: $color-white;
+$color-btn-content-inv--hover: $color-blue-1;
+$color-btn-content-inv--active: $color-blue-1;
+$color-btn-content-inv--disabled: $color-blue-5;
+
+// modal
+$color-btn-bg-mod: $color-blue-1;
+$color-btn-bg-mod--hover: $color-blue-2;
+$color-btn-bg-mod--active: $color-white;
+$color-btn-bg-mod--disabled: $color-blue-6;
+
+$color-btn-content-mod: $color-white;
+$color-btn-content-mod--hover: $color-white;
+$color-btn-content-mod--active: $color-white;
+$color-btn-content-mod--disabled: $color-white;
+
+///////////////////////////////////////////////////
+// link
+$color-btn-link--disabled: $color-gray-8;
+$color-btn-link--hover-secondary: $color-blue-5;
+
+// Main header and nav wrapper
+$color-bg-nav-wrapper: $color-white;
+
+// Main header
+$color-bg-main-header: $color-gray-1;
+$color-border-main-header: $color-white;
+
+$color-link-header: $color-gray-2;
+$color-link-header--hover: $color-main;
+$color-link-header--active: $color-main;;
+$color-link-header--focus: $color-main;;
+$color-link-header--visited: $color-gray-2;
+
+// Main nav
+$color-bg-main-nav: $color-white;
+$color-link-nav: $color-gray-3;
+$color-link-nav--hover: $color-main;
+$color-link-nav--active: $color-main;
+$color-link-nav--focus: $color-main;
+$color-link-nav--visited: $color-gray-3;
+
+// Main footer
+$color-bg-main-footer: $color-gray-6;
+$color-border-main-footer: $color-gray-7;
+
+$color-copyright-footer: $color-gray-2;
+$color-header-footer: $color-gray-4;
+$color-text-footer: $color-white;
+
+$color-link-footer: $color-gray-4;
+$color-link-footer--hover: $color-white;
+$color-link-footer--active: $color-white;
+$color-link-footer--focus: $color-white;
+$color-link-footer--visited: $color-gray-4;
+
+// Search
+$color-bg-search: $color-white;
+$color-extend-search: $color-gray-3;
+$color-extend-search--hover: $color-blue-1;
+
+$color-border-search: $color-gray-8;
+$color-header-search: $color-gray-3;
+
+// Search result
+$color-bg-search-result: $color-gray-10;
+
+// Input search
+$color-search-icon: $color-gray-9;
+$color-search-icon--hover: $color-blue-5;
+$color-search-icon--focus: $color-blue-5;
+$color-search-icon--focus-hover: $color-blue-1;
+
+// Inputs - select, radio, checkbox, range
+$color-input-content: $color-gray-2;              // 1
+$color-input-content--secondary: $color-gray-4;   // 3
+$color-input-content--thirdly: $color-white;      // 9
+$color-input-content--fourthly: $color-blue-6;      // 10
+$color-input--event: $color-blue-1;               // 4
+$color-input-text: $color-gray-3;                 // 5
+$color-input-bg--thirdly: $color-gray-13;         // 6
+$color-input-bg--secondary: $color-white;         // 2
+$color-input-content-thirdly: $color-gray-8;      // 7
+$color-input-bg: $color-gray-1;                   // 8
+
+$color-input-content--modal: $color-white;
+
+// Modals
+$color-header-modal: $color-gray-11;
+$color-overlay-modal: $color-gray-12;
+$color-text-modal: $color-gray-4;
+$color-border-section-modal: $color-gray-5;
+
+// Lots
+$color-subheader-lot: $color-gray-4;
+$color-header-lot: $color-gray-3;
+$color-text-lot: $color-gray-5;
+
+// Table
+$color-bg-head-table: $color-gray-13;
+$color-text-table: $color-gray-5;
+$color-text-head-table: $color-gray-4;
+
+// Common and misc
+// Gradients
+$gradient-fader-right--white: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(255,255,255,0.44) 64%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%);
+$gradient-fader-left--white: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(255,255,255,0.44) 36%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+
+// Colors
+$color-state-ok: #00bf2d;
+$color-state-warning: #e69d0b;
+$color-state-danger: #d64545;
+$color-state-info: #2d5a96;
+
+// Borders
+$color-border: $color-gray-8;
+
+$color-close-cross: $color-gray-4;
+
+$color-tag-text: $color-gray-2;
+
+// Text common
+$color-header: $color-gray-3;
+$color-header--secondary: $color-gray-8;
+$color-text-pale: $color-gray-4;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Fonts/type
-$font-family-main: "Open Sans", "Arial", sans-serif;
-$font-family-main--bold: "Open Sans Bold", "Arial", sans-serif;
-$font-family-main--light: "Open Sans Light", "Arial", sans-serif;
+$font-family-main: "Roboto", "Arial", sans-serif;
+// Rewrite - because of google fonts
+$font-family-main--bold: "Roboto Bold", "Arial", sans-serif;
+$font-family-main--bold: "Roboto", "Arial", sans-serif;
+$font-family-main--light: "Roboto Light", "Arial", sans-serif;
+$font-family-main--light: "Roboto", "Arial", sans-serif;
+$font-family-main--thin: "Roboto Thin", "Arial", sans-serif;
+$font-family-main--thin: "Roboto", "Arial", sans-serif;
 
-$font-size-main: 1rem !default; // Assumes the browser default, typically `16px`
-
-$font-size-h1: 20px;
-$font-size-h1--min: 20px;
-$font-size-h2: 20px;
-$font-size-h2--min: 20px;
-$font-size-h3: 20px;
-$font-size-h3--min: 20px;
-$font-size-h4: 20px;
-$font-size-h4--min: 20px;
-$font-size-h5: 20px;
-$font-size-h5--min: 20px;
-$font-size-h6: 20px;
-$font-size-h6--min: 20px;
-
-$font-weight-main: 500;
-$font-weight-bold: 700;
+$font-weight-reg: 400;
+$font-weight-bold: 600;
 $font-weight-light: 300;
+$font-weight-thin: 100;
+$font-weight-main: $font-weight-reg;
 
-$line-height-main: 1.2;
+$font-size-default: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-main: 0.875rem ; // 14px
+$line-height-main: 1.3;
+
+$font-size-h1: 36px;
+$font-size-h1--min: 28px;
+$font-size-h2: 30px;
+$font-size-h2--min: 24px;
+$font-size-h3: 24px;
+$font-size-h3--min: 20px;
+$font-size-h4: 18px;
+$font-size-h4--min: 16px;
+$font-size-h5: 16px;
+$font-size-h5--min: 14px;
+$font-size-h6: 14px;
+$font-size-h6--min: 12px;
+
+// Z-index
+$z-index-menu-hamburger: 130;
+$z-index-menu: 120;
+$z-index-menu-overlay: 115;
+$z-index-modal: 140;
+$z-index-max: 100;
+$z-index-middle: 50;
+$z-index-min: 0;
+$z-index-mobile-menu: 10;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Grid
-$brp-xs: map-get($grid-breakpoints, xs); // xs: 0,
+
+// From bootstrap
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$grid-breakpoints-max: (
+        xs: 0,
+        sm: 575px,
+        md: 767px,
+        lg: 991px,
+        xl: 1199px
+);
+
+$brp-xs: 400px; // xs: 400px,
 $brp-sm: map-get($grid-breakpoints, sm); // sm: 576px,
 $brp-md: map-get($grid-breakpoints, md); // md: 768px,
 $brp-lg: map-get($grid-breakpoints, lg); // lg: 992px,
 $brp-xl: map-get($grid-breakpoints, xl); // xl: 1200px
+
+$brp-xs--max: $brp-xs - 1; // xs: 0,
+$brp-sm--max: $brp-sm - 1; // sm: 576px,
+$brp-md--max: $brp-md - 1; // md: 768px,
+$brp-lg--max: $brp-lg - 1; // lg: 992px,
+$brp-xl--max: $brp-xl - 1; // xl: 1200px
+
+$brp-mobile-menu: $brp-lg;
+$brp-mobile-menu--max: $brp-lg--max;
+
+////////////////////////////////////////////////////////////////////////////////
+// Custom properties
+:root{
+  // --mainFooterHeight: 0px;
+}

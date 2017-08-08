@@ -1,0 +1,24 @@
+.details{
+
+  padding: 60px 0px 90px 0px;
+
+  h3{
+    font-size: 1.71em;
+    line-height: 1;
+    color: $color-header-lot;
+    font-weight: $font-weight-light;
+    font-family: $font-family-main--light;
+
+    margin-bottom: 30px;
+
+    @media screen and (min-width: $brp-sm) {
+      font-size: 2.57em;
+    }
+  }
+
+  .sidebar__list{
+    a{
+      display: block;
+    }
+  }
+}

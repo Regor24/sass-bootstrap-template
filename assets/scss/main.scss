@@ -1,8 +1,23 @@
+// Variables
+@import "settings/variables.scss";
+
 // Vendor
-@import "vendor/bootstrap/bootstrap.scss";
+@import "vendor/vendors-extensions.scss";
+
+@import "vendor/bootstrap/bootstrap-grid.scss";
+@import "vendor/bootstrap/_variables.scss";
+@import "vendor/bootstrap/_mixins.scss";
+@import "vendor/bootstrap/utilities/_flex.scss";
+
+@import "vendor/popover-2";
+//@import "vendor/mdi/materialdesignicons.scss";
+@import "vendor/react-select/default.scss";
+@import "vendor/react-select-me/react-select-me.scss";
+@import "vendor/input-range/input-range.scss";
+@import "vendor/react-datepicker/react-datepicker.scss";
+@import "vendor/react-bootstrap-table/react-bootstrap-table-all.min.scss";
 
 // Main
-@import "settings/variables.scss";
 @import "settings/fonts.scss";
 
 @import "tools/mixins.scss";
@@ -13,24 +28,47 @@
 @import "base/scaffolding.scss";
 @import "base/type.scss";
 
-@import "objects/layout.scss";
 @import "objects/media.scss";
 @import "objects/animations.scss";
 
 @import "components/form.scss";
 @import "components/button.scss";
 @import "components/main-header.scss";
+@import "components/main-nav.scss";
 @import "components/main-footer.scss";
+@import "components/footer-nav.scss";
+@import "components/common";
+@import "components/search-placeholder.scss";
+@import "components/search-holder.scss";
+@import "components/field-component.scss";
+@import "components/extended-search.scss";
+@import "components/search-result.scss";
+@import "components/inputs.scss";
+@import "components/select.scss";
+@import "components/tags.scss";
+@import "components/modal.scss";
+@import "components/main-content.scss";
+@import "components/menu-wrapper.scss";
+@import "components/mobile-header.scss";
+@import "components/spinner.scss";
+@import "components/lot-card.scss";
+@import "components/details.scss";
+@import "components/rules.scss";
+@import "components/hero.scss";
+@import "components/panels.scss";
+@import "components/panel";
+@import "components/tables.scss";
+@import "components/sidebar.scss";
+@import "components/pagination.scss";
+@import "components/template.scss";
+@import "components/mailing.scss";
+@import "components/table-complex.scss";
+@import "components/accordion";
+@import "components/tab.scss";
+@import "components/groups.scss";
+@import "components/icons.scss";
+
+@import "objects/layout.scss";
 
 @import "utilities/helpers.scss";
 @import "utilities/states.scss";
-
-/////////////////////////////////////////////////////////
-// Notes
-
-// Grid
-// @include media-breakpoint-up(xs) { ... }
-// @include media-breakpoint-up(sm) { ... }
-// @include media-breakpoint-up(md) { ... }
-// @include media-breakpoint-up(lg) { ... }
-// @include media-breakpoint-up(xl) { ... }

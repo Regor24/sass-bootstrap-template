@@ -1,0 +1,35 @@
+.icon {
+  &__markets-help {
+    margin-left: 10px;
+
+    &:before {
+      content: '?';
+      padding: 3px 7px;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-size: 12px;
+      color: $color-gray-14;
+      border-radius: 50%;
+      background: $color-gray-8;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      &:before {
+        color: $color-white;
+        background: $color-blue-1;
+      }
+    }
+  }
+
+  &__markets-grey {
+    color: $color-gray-14;
+
+    &:hover {
+      color: $color-blue-1;
+    }
+  }
+
+  &__markets-blue {
+    color: $color-blue-1;
+  }
+}
